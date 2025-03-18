@@ -27,7 +27,7 @@ import * as yup from 'yup';
     const changeTask = handleSubmit(async () => {
         store.toggler('change-task')
             try {
-                const request = await axios.put('http://localhost:4000/tasks/changeTask', {
+                const request = await axios.put('https://crm-backend-gihc.onrender.com/tasks/changeTask', {
                     taskname: taskname.value,
                     deadline: deadline.value,
                     status: status.value,
@@ -54,7 +54,7 @@ import * as yup from 'yup';
             } catch (error) {
                 console.log(error)
             }
-        }
+    }
 
     function getUserTasks () {
         const userTasks = toRaw(store.userTasks);
