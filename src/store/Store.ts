@@ -52,7 +52,7 @@ export const useStore = defineStore('main', {
 
         async getUser() {
             try {
-                const user = await axios.post('http://localhost:4000/tasks/getUser', {
+                const user = await axios.post('https://crm-backend-gihc.onrender.com/tasks/getUser', {
                     token: this.token
                 })
                 console.log(user.data)
@@ -66,7 +66,7 @@ export const useStore = defineStore('main', {
 
         async getUserTasks() {
             try {
-                const user = await axios.post('http://localhost:4000/tasks/getUser', {
+                const user = await axios.post('https://crm-backend-gihc.onrender.com/tasks/getUser', {
                     token: this.token
                 })
                 console.log(user.data)

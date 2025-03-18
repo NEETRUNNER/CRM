@@ -22,7 +22,7 @@ import * as yup from 'yup';
 
     const addTask = handleSubmit(async () => {
         try {
-            const request = await axios.post('http://localhost:4000/tasks/addTask', {
+            const request = await axios.post('https://crm-backend-gihc.onrender.com/tasks/addTask', {
                 taskname: taskname.value,
                 deadline: deadline.value,
                 status: status.value,

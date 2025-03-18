@@ -36,7 +36,7 @@ import { storeToRefs } from 'pinia'; // Импортурем стейт
     const loginHandler = handleSubmit(async () => { // handleSubmit сам указывает тип
 
         try {
-            const request = await axios.post('http://localhost:4000/auth/login', {
+            const request = await axios.post('https://crm-backend-gihc.onrender.com/auth/login', {
                 email: email.value,
                 password: password.value
             });

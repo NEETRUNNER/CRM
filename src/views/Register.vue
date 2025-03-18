@@ -29,7 +29,7 @@ import { onUpdated } from 'vue';
     const loginHandler = handleSubmit(async (values) => { // handleSubmit сам указывает тип
 
         try {
-            const request = await axios.post('http://localhost:4000/auth/registration', {
+            const request = await axios.post('https://crm-backend-gihc.onrender.com/auth/registration', {
                 email: values.email,
                 password: values.password
             });

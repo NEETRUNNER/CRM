@@ -46,7 +46,7 @@ import * as yup from 'yup';
         store.toggler('delete-task')
         console.log('Удаление таски')
             try {
-                const request = await axios.post('http://localhost:4000/tasks/deleteTask', {
+                const request = await axios.post('https://crm-backend-gihc.onrender.com/tasks/deleteTask', {
                     taskId: taskId,
                     token: store.token,
                 })
