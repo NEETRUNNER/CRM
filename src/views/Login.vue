@@ -67,7 +67,7 @@ import { storeToRefs } from 'pinia'; // Импортурем стейт
                 <input
                 v-model="email"
                 spellcheck="false"
-                class="input"
+                class="input md:!p-2 xs:!p-1"
                 type="email"
                 name="email"
                 id="email-input"
@@ -81,7 +81,7 @@ import { storeToRefs } from 'pinia'; // Импортурем стейт
                 <input
                 v-model="password"
                 spellcheck="false"
-                class="input"
+                class="input md:!p-2 xs:!p-1"
                 type="text"
                 name="password"
                 id="password-input"

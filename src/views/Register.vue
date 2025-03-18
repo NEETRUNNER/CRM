@@ -52,13 +52,13 @@ import { onUpdated } from 'vue';
             <div class="card xm:w-[400px] xs:w-[300px]">
 
             <form novalidate @submit.prevent="loginHandler" class="form">
-                <div class="title">Регистрация аккаунта</div>
+                <div class="title text-center">Регистрация аккаунта</div>
 
                 <label class="label_input" for="email-input">Почта</label>
                 <input
                 v-model="email"
                 spellcheck="false"
-                class="input"
+                class="input md:!p-2 xs:!p-1"
                 type="email"
                 name="email"
                 id="email-input"
@@ -72,7 +72,7 @@ import { onUpdated } from 'vue';
                 <input
                 v-model="password"
                 spellcheck="false"
-                class="input"
+                class="input md:!p-2 xs:!p-1"
                 type="text"
                 name="password"
                 id="password-input"
