@@ -10,7 +10,7 @@ import * as yup from 'yup';
 
     const { handleSubmit, values, errors, defineField } = useForm({
         validationSchema: yup.object({
-            taskname: yup.string().matches(/^[^\d]+$/, "Название задачи не должно содержать цифры").required("Название задачи обязательно"),
+            taskname: yup.string().required("Название задачи обязательно"),
             deadline: yup.string().required("Дедлайн обязателен"), /* .matches(/^\d+$/, "Дедлайн должен иметь только цифры") */
             status: yup.string().required("Статус обязателен"),
         }),
@@ -30,6 +30,7 @@ import * as yup from 'yup';
             });
 
             console.log(request)
+            store.toggler('close-task')
             return request.data;
         } catch (error) {
             console.log(error);
@@ -58,9 +59,9 @@ import * as yup from 'yup';
         <form class="modal-form flex flex-col gap-y-1 w-full" @submit.prevent="addTask">
 
         <h2 class="text-lg font-semibold mb-3 uppercase">Создать задачу</h2>
-        <input v-model="taskname" placeholder="Имя проекта" type="text" class="w-full border p-2 rounded font-mulish">
+        <input v-model="taskname" placeholder="Имя задачи" type="text" class="w-full border p-2 rounded font-mulish">
             <div class="input-error text-red-500 text-xs my-1 font-mulish">{{ errors.taskname }}</div>
-        <input v-model="deadline" placeholder="Дедлайн проекта" type="text" class="w-full border p-2 rounded font-mulish">
+        <input v-model="deadline" placeholder="Дедлайн задачи" type="text" class="w-full border p-2 rounded font-mulish">
             <div class="input-error text-red-500 text-xs my-1 font-mulish">{{ errors.deadline }}</div>
 
         <select v-model="status" class="font-mulish block w-full px-2 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-sky-500 focus:border-sky-500 bg-white text-gray-800 cursor-pointer transition">

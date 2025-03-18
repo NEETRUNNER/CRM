@@ -99,7 +99,7 @@ import * as yup from 'yup';
         </select>
         <div class="input-error text-red-500 text-xs my-1 font-exo2">{{ errors.status }}</div> 
 
-        <div class="flex justify-end gap-2">
+        <div class="flex md:justify-end xs:justify-between gap-2 flex-wrap">
             <button type="button" @click="deleteTask" class="px-4 py-2 bg-red-500 text-white rounded font-plex">Удалить</button>
 
             <button type="button" @click="store.toggler('change-task')" class="px-4 py-2 bg-gray-200 rounded">Отмена</button>
