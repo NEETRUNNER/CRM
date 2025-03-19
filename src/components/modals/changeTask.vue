@@ -25,7 +25,6 @@ import * as yup from 'yup';
     const [status, statusAttrs] = defineField('status');
 
     const changeTask = handleSubmit(async () => {
-        store.toggler('change-task')
             try {
                 const request = await axios.put('https://crm-backend-gihc.onrender.com/tasks/changeTask', {
                     taskname: taskname.value,
@@ -35,10 +34,11 @@ import * as yup from 'yup';
                     taskId: taskId
                 });
 
-                console.log(request)
                 return request.data;
             } catch (error) {
                 console.log(error);
+            } finally {
+                store.toggler('change-task')
             }
     })
 

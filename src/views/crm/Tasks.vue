@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { onMounted, watch } from 'vue';
 import { useStore } from '@/store/Store';
 import { storeToRefs } from 'pinia';
 
     const store = useStore();
-    const {} = storeToRefs(store); // Чтобы вытащить реактивное состояние используем storeToRefs
+    const {userTasks} = storeToRefs(store); // Чтобы вытащить реактивное состояние используем storeToRefs
 
     onMounted(() => {
         store.getUserTasks();
@@ -14,6 +14,11 @@ import { storeToRefs } from 'pinia';
         store.toggler('change-task');
         store.getTaskId(id)
     }
+
+    watch(userTasks, () => {
+        store.getUserTasks();
+    })
+
 </script>
 
 <template>

@@ -55,8 +55,8 @@ export const useStore = defineStore('main', {
                 const user = await axios.post('https://crm-backend-gihc.onrender.com/tasks/getUser', {
                     token: this.token
                 })
-                console.log(user.data)
-                this.userData = user.data;
+
+                this.userData = user.data; // Получили данные юзера
                 return user.data;
             } catch(error) {
                 console.log(error)
@@ -69,8 +69,7 @@ export const useStore = defineStore('main', {
                 const user = await axios.post('https://crm-backend-gihc.onrender.com/tasks/getUser', {
                     token: this.token
                 })
-                console.log(user.data)
-                this.userTasks = user.data.tasks;
+                this.userTasks = user.data.tasks; // Получили задачи юзера
                 return user.data;
             } catch(error) {
                 console.log(error)

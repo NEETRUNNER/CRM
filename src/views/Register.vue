@@ -35,8 +35,8 @@ import { onUpdated } from 'vue';
             });
 
             router.push('/login') // Сделали роут при успешной регистрации
-            console.log("Успешная регистрация", request.data);
-
+            console.log("Успешная регистрация");
+            return request.data;
         } catch (error) {
             console.error("Ошибка регистрации", error);
         }

@@ -30,7 +30,6 @@ import * as yup from 'yup';
             });
 
             console.log(request)
-            store.toggler('close-task')
             return request.data;
         } catch (error) {
             console.log(error);
@@ -38,17 +37,14 @@ import * as yup from 'yup';
             taskname.value = '',
             deadline.value = '',
             status.value = ''
+
+            store.toggler('close-task')
         }
     })
 
     onMounted(() => {
         status.value = "В процессе";
-        console.log(status.value)
     });
-
-    watch(status, (newValue) => {
-        console.log(newValue)
-    })
 
 </script>
 

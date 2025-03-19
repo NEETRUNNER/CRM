@@ -28,10 +28,6 @@ import { storeToRefs } from 'pinia'; // Импортурем стейт
     const [email, emailAttrs] = defineField("email");
     const [password, passwordAttrs] = defineField("password");
 
-    watch(token, (newValue, oldValue) => { // Такой хук может работать внутри функции
-        console.log(newValue)
-    })
-
     // Обработчик логина
     const loginHandler = handleSubmit(async () => { // handleSubmit сам указывает тип
 
@@ -44,8 +40,7 @@ import { storeToRefs } from 'pinia'; // Импортурем стейт
             store.getToken(request.data) // Получаем экшен из Pinia с помощью store
             router.push('/tasks') // Сделали роут при успешном входе
 
-            console.log("Успешный вход", request);
-
+            console.log("Успешный вход");
         } catch (error) {
             console.error("Ошибка входа", error);
         }
